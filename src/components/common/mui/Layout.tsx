@@ -10,7 +10,7 @@ type Props = {
 
 const Layout: React.FC<Props> = ({ children, linkItems }) => {
   return (
-    <>
+    <Box>
       <NavBar linkItems={linkItems} />
       <Box
         sx={(theme) => ({
@@ -21,7 +21,7 @@ const Layout: React.FC<Props> = ({ children, linkItems }) => {
       >
         {children}
       </Box>
-    </>
+    </Box>
   );
 };
 
