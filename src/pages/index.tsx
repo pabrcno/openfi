@@ -3,6 +3,8 @@ import { Button, Container, TextField, Typography } from "@mui/material";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useThirdPartyForm } from "@/hooks/common/useThirdPartyForm";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "../theme/theme";
 
 const loginValidationSchema = z.object({
   email: z.string().email(),
@@ -30,22 +32,19 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <TextField
           label="Email"
+          type="email"
           fullWidth
-          margin="normal"
-          variant="outlined"
           {...simplifiedRegister("email", { required: true })}
-          error={!!simplifiedRegister("email").error}
-          helperText={"Email is required"}
+          error={!!errors.email}
+          helperText={!!errors.email ? "Email is required" : undefined}
         />
         <TextField
           label="Password"
           type="password"
           fullWidth
-          margin="normal"
-          variant="outlined"
           {...simplifiedRegister("password", { required: true })}
           error={!!errors.password}
-          helperText={"Password is required"}
+          helperText={!!errors.password ? "Password is required" : undefined}
         />
         <Button
           type="submit"
@@ -64,7 +63,9 @@ const LoginForm = () => {
 export default function Home() {
   return (
     <main>
-      <LoginForm />
+      <ThemeProvider theme={theme}>
+        <LoginForm />
+      </ThemeProvider>
     </main>
   );
 }
