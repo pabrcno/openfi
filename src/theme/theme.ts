@@ -115,10 +115,10 @@ const theme = createTheme({
           borderRadius: 4,
         },
         containedPrimary: {
-          backgroundColor: Colors.Blue,
+          backgroundColor: Colors.Charcoal,
           color: "#FFFFFF",
           "&:hover": {
-            backgroundColor: Colors.Blue,
+            backgroundColor: Colors.Charcoal,
             opacity: 0.9,
           },
         },

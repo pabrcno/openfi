@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { NavBar } from "./NavBar"; // Assuming NavBar is in the same directory
 import { LinkItem } from "@/types/LinkItem";
 
@@ -12,13 +12,15 @@ const Layout: React.FC<Props> = ({ children, linkItems }) => {
   return (
     <>
       <NavBar linkItems={linkItems} />
-      <Container
-        sx={{
+      <Box
+        sx={(theme) => ({
           pt: 2,
-        }}
+          backgroundColor: theme.palette.background.default,
+          minHeight: "100vh",
+        })}
       >
         {children}
-      </Container>
+      </Box>
     </>
   );
 };
