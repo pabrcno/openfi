@@ -1,15 +1,11 @@
+"use client";
 import React from "react";
 import { Button, Container, TextField, Typography } from "@mui/material";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { useThirdPartyForm } from "@/hooks/common/useThirdPartyForm";
 import Layout from "@/components/common/mui/Layout";
 import { unregisteredUserLinks } from "@/common/links";
-
-const loginValidationSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8).max(100),
-});
+import { loginValidationSchema } from "@/schemas/login";
 
 const LoginForm = () => {
   const {
