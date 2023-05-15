@@ -32,3 +32,48 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Project Structure
+
+your-app/
+├── .next/
+├── node_modules/
+├── public/
+│ ├── favicon.ico
+│ └── logo.svg
+├── src/
+│ ├── components/
+│ │ ├── Common/
+│ │ │ ├── Button/
+│ │ │ ├── Input/
+│ │ │ └── ...
+│ │ └── Feature/
+│ │ ├── FeatureComponentA/
+│ │ └── FeatureComponentB/
+│ ├── hooks/
+│ │ ├── useCustomHookA.js
+│ │ └── useCustomHookB.js
+│ ├── lib/
+│ │ ├── api/
+│ │ │ ├── graphql.js (Apollo Client setup)
+│ │ │ └── rest.js (REST API setup, if needed)
+│ │ ├── utils/
+│ │ │ ├── formatDate.js
+│ │ │ └── ...
+│ │ └── constants.js
+│ ├── pages/
+│ │ ├── \_app.js
+│ │ ├── index.js
+│ │ └── [dynamic].js
+│ ├── styles/
+│ │ ├── globals.css
+│ │ └── theme.js (if using a theming library)
+│ └── tests/
+│ ├── components/
+│ └── integration/
+├── .babelrc
+├── .eslintrc
+├── .gitignore
+├── next.config.js
+├── package.json
+└── README.md
