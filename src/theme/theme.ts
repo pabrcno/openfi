@@ -8,6 +8,7 @@ enum Colors {
   Black = "#000000",
   Blue = "#375871",
   Green = "#37AA71",
+  Accent = "#FF994C",
 }
 
 const theme = createTheme({
@@ -30,6 +31,9 @@ const theme = createTheme({
       primary: Colors.DarkGray,
       secondary: Colors.Charcoal,
       disabled: Colors.MediumGray,
+    },
+    action: {
+      active: Colors.Accent,
     },
   },
   typography: {
@@ -140,6 +144,50 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           marginBottom: 16,
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: Colors.Charcoal,
+        },
+      },
+    },
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          justifyContent: "space-between",
+        },
+      },
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+          color: "#fff",
+          textDecoration: "none",
+          "&:hover": {
+            textDecoration: "underline",
+          },
+        },
+      },
+    },
+    MuiListItem: {
+      styleOverrides: {
+        root: {
+          "&:not(:last-child)": {
+            marginRight: 20,
+          },
+        },
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: Colors.Charcoal,
+          color: "#fff",
+          minWidth: 200,
         },
       },
     },
